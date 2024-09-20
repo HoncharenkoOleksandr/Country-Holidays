@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
 
+## Before start
+
+Goto `src/environments` folder and create there a `environment.ts`.
+In `environment.ts` add this lines
+```
+export const environment = {
+  production: true,
+  apiUrl: 'your API url'
+};
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

@@ -1,6 +1,31 @@
-<input type="text" placeholder="Search countries" [(ngModel)]="searchTerm" (input)="onSearch()">
-<ul>
-  <li *ngFor="let country of filteredCountries">
-    <a [routerLink]="['/country', country.countryCode]">{{ country.name }}</a>
-  </li>
-</ul>
+<div class="main-wrapper">
+  <div class="main-search">
+    <div class="main-search-wrapper">
+      <h1>Search country</h1>
+      <div class="main-search-input-wrapper">
+        <input class="main-search-input" type="text" placeholder="Search countries" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Type your country here...">
+        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_1_596)">
+            <path d="M13.8478 13.5228L10.3658 10.0409C11.3147 8.8804 11.7812 7.3996 11.6689 5.90479C11.5566 4.40998 10.874 3.01553 9.76243 2.00985C8.65081 1.00418 7.19518 0.464237 5.69663 0.501705C4.19808 0.539174 2.77125 1.15119 1.71128 2.21116C0.65131 3.27113 0.0392959 4.69795 0.00182735 6.19651C-0.0356412 7.69506 0.504303 9.15069 1.50998 10.2623C2.51565 11.3739 3.91011 12.0565 5.40492 12.1688C6.89973 12.2811 8.38052 11.8146 9.54101 10.8657L13.0229 14.3476C13.1329 14.4539 13.2803 14.5127 13.4332 14.5114C13.5862 14.51 13.7325 14.4487 13.8407 14.3405C13.9488 14.2324 14.0102 14.0861 14.0115 13.9331C14.0128 13.7802 13.954 13.6328 13.8478 13.5228ZM5.85201 11.0186C4.92903 11.0186 4.02677 10.7449 3.25934 10.2321C2.49191 9.7193 1.89378 8.99046 1.54057 8.13774C1.18736 7.28502 1.09494 6.34671 1.27501 5.44146C1.45507 4.53622 1.89953 3.7047 2.55217 3.05205C3.20482 2.39941 4.03634 1.95495 4.94158 1.77488C5.84683 1.59482 6.78514 1.68724 7.63786 2.04044C8.49058 2.39365 9.21942 2.99179 9.7322 3.75922C10.245 4.52665 10.5187 5.4289 10.5187 6.35188C10.5173 7.58913 10.0252 8.77531 9.1503 9.65018C8.27543 10.525 7.08926 11.0172 5.85201 11.0186Z" fill="#090B22"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_1_596">
+              <rect width="14" height="14" fill="white" transform="translate(0 0.5)"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <img class="main-search-image" src="flags.png" alt="">
+    </div>
+  </div>
+  <div class="main-list-warpper">
+    <ul class="main-list">
+      <a class="main-list-item" *ngFor="let country of filteredCountries" [routerLink]="['/country', country.countryCode]">
+        <li class="main-list-item-text">
+          {{ country.name }}
+        </li>
+      </a>
+    </ul>
+    <img class="main-list-image" src="map-base.png" alt="">
+  </div>
+</div>

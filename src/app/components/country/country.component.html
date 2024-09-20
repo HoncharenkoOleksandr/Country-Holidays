@@ -1,12 +1,25 @@
-<h2>Holidays for {{ countryCode }}</h2>
-<div>
-  <button *ngFor="let year of years" (click)="onYearChange(year)">
-    {{ year }}
-  </button>
+<div class="page-wrapper">
+  <div class="country-wrapper">
+    <div class="country">
+      <h2 class="country-title">Holidays for {{ countryCode }}</h2>
+      <div class="country-years-list">
+        <button class="country-years {{currentSelectedYear === year && 'country-years__selected'}}" *ngFor="let year of years" (click)="onYearChange(year)">
+          {{ year }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="holiday-list-wrapper">
+    <ul class="holiday-list">
+      <li class="holiday" *ngFor="let holiday of holidays">
+        <span class="holiday__name">{{ holiday.name }}</span>
+        <span class="holiday__localname">{{ holiday.localName }}</span>
+        <span class="holiday__date">{{ holiday.date }}</span>
+        <div class="holiday__taglist">
+          <span class="holiday__tag" *ngFor="let type of holiday.types">{{type}}</span>
+        </div>
+      </li>
+    </ul>
+    <img class="holiday-list-image" src="map-base.png" alt="">
+  </div>
 </div>
-
-<ul>
-  <li *ngFor="let holiday of holidays">
-    <p>{{ holiday.name }} - {{ holiday.date }} ({{ holiday.types }})</p>
-  </li>
-</ul>

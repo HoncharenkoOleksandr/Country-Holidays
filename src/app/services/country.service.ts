@@ -7,12 +7,13 @@ import {
   PublicHolidayV3Dto,
   LongWeekendV3Dto,
 } from './models';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CountryService {
-  private baseUrl = ''; //TODO: .env file in to working yet!
+  private baseUrl = environment.apiUrl
 
   constructor(private http: HttpClient) {}
 

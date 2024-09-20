@@ -16,7 +16,8 @@ export class CountryComponent implements OnInit {
   countryCode: string;
   holidays: PublicHolidayV3Dto[] = [];
   currentYear: number = new Date().getFullYear();
-  years: number[] = [2024];
+  currentSelectedYear: number = this.currentYear;
+  years: number[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +27,7 @@ export class CountryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.years = Array.from({ length: 11 }, (v, k) => 2020 + k);
+    this.years = Array.from({ length: 11 }, (_v, k) => 2020 + k);
     this.loadHolidays(this.currentYear);
   }
 
@@ -41,5 +42,6 @@ export class CountryComponent implements OnInit {
 
   onYearChange(year: number): void {
     this.loadHolidays(year);
+    this.currentSelectedYear = year;
   }
 }

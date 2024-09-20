@@ -3,6 +3,7 @@
 # Env
 
 .env
+/src/environments/*.ts
 
 # Compiled output
 /dist
