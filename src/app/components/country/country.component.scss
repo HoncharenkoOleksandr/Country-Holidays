@@ -25,7 +25,7 @@
     border: none;
     width: 74px;
     height: 40px;
-    color: black;
+    color: white;
     cursor: pointer;
 
     font-size: 16px;
@@ -35,6 +35,7 @@
     transition: all 0.3s;
     &__selected {
       background-color: white;
+      color: black;
     }
     &-list {
       width: 100%;
