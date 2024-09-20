@@ -1,0 +1,12 @@
+<h2>Holidays for {{ countryCode }}</h2>
+<div>
+  <button *ngFor="let year of years" (click)="onYearChange(year)">
+    {{ year }}
+  </button>
+</div>
+
+<ul>
+  <li *ngFor="let holiday of holidays">
+    <p>{{ holiday.name }} - {{ holiday.date }} ({{ holiday.types }})</p>
+  </li>
+</ul>

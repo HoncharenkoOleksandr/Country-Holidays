@@ -1,0 +1,6 @@
+<input type="text" placeholder="Search countries" [(ngModel)]="searchTerm" (input)="onSearch()">
+<ul>
+  <li *ngFor="let country of filteredCountries">
+    <a [routerLink]="['/country', country.countryCode]">{{ country.name }}</a>
+  </li>
+</ul>

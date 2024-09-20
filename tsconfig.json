@@ -22,12 +22,23 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "types": ["node"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
+  },
+  "architect": {
+    "build": {
+      "builder": "@angular-devkit/build-angular:browser",
+      "options": {
+        "customWebpackConfig": {
+          "path": "./custom-webpack.config.js"
+        }
+      }
+    }
   }
 }
